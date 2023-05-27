@@ -13,6 +13,7 @@
 
 #include "External/stb_image.h"
 #include "Mesh.hpp"
+#include "Animation.hpp"
 #include "Material.hpp"
 
 namespace VRThreads
@@ -74,7 +75,7 @@ namespace VRThreads
             return textureID;
 		}
 
-		static vector<shared_ptr<Mesh>> LoadAnimation(const string& pathFormat, int startFrame, int endFrame) 
+		static Animation LoadAnimation(const string& pathFormat, int startFrame, int endFrame)
 		{
 			vector<shared_ptr<Mesh>> vMeshes;
 			string path;
@@ -85,7 +86,7 @@ namespace VRThreads
 				currMesh = LoadMesh(path);
 				vMeshes.push_back(currMesh);
 			}
-			return vMeshes;
+			return Animation(vMeshes);
 		}
 
 		static shared_ptr<Mesh> LoadMesh(const string& path)
