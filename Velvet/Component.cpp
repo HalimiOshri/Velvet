@@ -2,7 +2,7 @@
 #include "Actor.hpp"
 
 using namespace std;
-using namespace Velvet;
+using namespace VRThreads;
 
 shared_ptr<Transform> Component::transform()
 {

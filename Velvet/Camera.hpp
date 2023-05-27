@@ -12,7 +12,7 @@
 
 using namespace std;
 
-namespace Velvet
+namespace VRThreads
 {
 	class Camera : public Component
 	{

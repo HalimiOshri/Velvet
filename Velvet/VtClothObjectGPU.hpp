@@ -6,7 +6,7 @@
 #include "MeshRenderer.hpp"
 #include "VtEngine.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class VtClothObjectGPU : public Component
 	{

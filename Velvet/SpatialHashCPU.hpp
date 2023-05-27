@@ -4,7 +4,7 @@
 #include <vector>
 #include <glm/glm.hpp>
 
-namespace Velvet
+namespace VRThreads
 {
 	using namespace std;
 

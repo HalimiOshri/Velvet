@@ -4,7 +4,7 @@
 #include "Light.hpp"
 #include "MeshRenderer.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class RenderPipeline
 	{

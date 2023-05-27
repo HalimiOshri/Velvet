@@ -7,7 +7,7 @@
 #include "Light.hpp"
 #include "Resource.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	MeshRenderer::MeshRenderer(shared_ptr<Mesh> mesh, shared_ptr<Material> material, bool castShadow)
 		: m_mesh(mesh), m_material(material)

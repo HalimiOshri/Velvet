@@ -5,7 +5,7 @@
 #include "MeshRenderer.hpp"
 #include "MouseGrabber.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 
 	class VtClothObjectCPU : public Component

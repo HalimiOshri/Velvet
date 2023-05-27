@@ -2,7 +2,7 @@
 
 #include "MeshRenderer.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	// Render particles using geometry shader
 	class ParticleGeometryRenderer : public MeshRenderer

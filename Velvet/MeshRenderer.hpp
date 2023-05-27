@@ -14,7 +14,7 @@
 #include "Material.hpp"
 #include "MaterialProperty.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class MeshRenderer : public Component
 	{

@@ -2,7 +2,7 @@
 
 #include "Common.cuh"
 
-namespace Velvet
+namespace VRThreads
 {
 	struct HashParams
 	{

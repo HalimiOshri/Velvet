@@ -9,7 +9,7 @@
 #include "GameInstance.hpp"
 #include "Input.hpp"
 
-using namespace Velvet;
+using namespace VRThreads;
 
 void PrintGlfwError(int error, const char* description)
 {
@@ -27,7 +27,7 @@ VtEngine::VtEngine()
 	// Multi-sample Anti-aliasing
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
-	m_window = glfwCreateWindow(Global::Config::screenWidth, Global::Config::screenHeight, "Velvet", NULL, NULL);
+	m_window = glfwCreateWindow(Global::Config::screenWidth, Global::Config::screenHeight, "VRThreads", NULL, NULL);
 
 	if (m_window == NULL)
 	{
@@ -91,7 +91,7 @@ int VtEngine::Run()
 		fmt::print(
 			"©°{0:\-^{2}}©´\n"
 			"©¦{1: ^{2}}©¦\n"
-			"©¸{0:\-^{2}}©¼\n", "", "Hello, Velvet!", 30);
+			"©¸{0:\-^{2}}©¼\n", "", "Hello, VRThreads!", 30);
 #pragma warning( pop ) 
 
 		m_game = make_shared<GameInstance>(m_window, m_gui);

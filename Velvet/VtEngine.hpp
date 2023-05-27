@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace Velvet
+namespace VRThreads
 {
 	class Scene;
 	class GUI;

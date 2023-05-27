@@ -1,6 +1,6 @@
 #include "Input.hpp"
 
-using namespace Velvet;
+using namespace VRThreads;
 
 Input::Input(GLFWwindow* window)
 {

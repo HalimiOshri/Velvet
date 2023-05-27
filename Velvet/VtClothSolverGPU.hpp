@@ -18,7 +18,7 @@
 
 using namespace std;
 
-namespace Velvet
+namespace VRThreads
 {
 	class VtClothSolverGPU : public Component
 	{
@@ -78,10 +78,11 @@ namespace Velvet
 
 				if (Global::simParams.enableSelfCollision)
 				{
-					if (substep % Global::simParams.interleavedHash == 0)
+					if (substep % Global::simParams.interleavedHash == 0) // OH TODO: once a few steps the neighbors are hashed on the GPU
 					{
 						m_spatialHash->Hash(predicted);
 					}
+					// OH TODO: here the distance query is performed
 					CollideParticles(deltas, deltaCounts, predicted, invMasses, m_spatialHash->neighbors, positions);
 				}
 				CollideSDF(predicted, sdfColliders, positions, (uint)sdfColliders.size(), substepTime);
@@ -232,7 +233,7 @@ namespace Velvet
 
 	private:
 
-		shared_ptr<SpatialHashGPU> m_spatialHash;
+		shared_ptr<SpatialHashGPU> m_spatialHash; // TODO OH: used for efficient self-collision calculation
 		vector<Collider*> m_colliders;
 		MouseGrabber m_mouseGrabber;
 

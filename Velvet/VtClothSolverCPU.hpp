@@ -12,7 +12,7 @@
 #include "SpatialHashCPU.hpp"
 #include "Timer.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class VtClothSolverCPU
 	{

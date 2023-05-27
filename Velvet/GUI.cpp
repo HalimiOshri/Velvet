@@ -3,7 +3,7 @@
 #include "Scene.hpp"
 #include "VtEngine.hpp"
 
-using namespace Velvet;
+using namespace VRThreads;
 
 #define SHORTCUT_BOOL(key, variable) if (Global::input->GetKeyDown(key)) variable = !variable
 

@@ -3,7 +3,7 @@
 #include "Common.cuh"
 #include "Common.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	struct SDFCollider
 	{
@@ -140,6 +140,8 @@ namespace Velvet
 
 	void ApplyDeltas(glm::vec3* predicted, glm::vec3* deltas, int* deltaCounts);
 
+	// TODO OH: here is the interface for collide SDF and collide particles below. Note that the collide particles provides the neighbors
+	// making the query more efficient
 	void CollideSDF(
 		glm::vec3* predicted,
 		CONST(SDFCollider*) colliders,

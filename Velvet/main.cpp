@@ -6,7 +6,7 @@
 #include "Scene.hpp"
 #include "Helper.hpp"
 
-using namespace Velvet;
+using namespace VRThreads;
 
 class ScenePremitiveRendering : public Scene
 {

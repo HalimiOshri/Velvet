@@ -13,7 +13,7 @@
 
 using namespace std;
 
-namespace Velvet
+namespace VRThreads
 {
 
 	class Timer

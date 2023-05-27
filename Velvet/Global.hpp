@@ -4,7 +4,7 @@
 
 #include "Common.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class GameInstance;
 	class Camera;

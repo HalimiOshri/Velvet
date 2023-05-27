@@ -9,7 +9,7 @@
 
 using namespace std;
 
-namespace Velvet
+namespace VRThreads
 {
 	/// <summary>
 	/// A class that allows you to create or modify meshes.

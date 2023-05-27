@@ -6,7 +6,7 @@
 #include "Global.hpp"
 #include "GameInstance.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class Input
 	{

@@ -10,7 +10,7 @@
 #include "Component.hpp"
 #include "Transform.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	using namespace std;
 

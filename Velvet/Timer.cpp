@@ -1,6 +1,6 @@
 #include "Timer.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	Timer* Timer::s_timer = nullptr;
 }

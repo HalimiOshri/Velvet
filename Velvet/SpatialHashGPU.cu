@@ -1,3 +1,5 @@
+// OH TODO: does this hashing use BVH?
+
 #include "SpatialHashGPU.cuh"
 
 #include <cub/device/device_radix_sort.cuh>
@@ -5,7 +7,7 @@
 #include "Timer.hpp"
 #include "VtBuffer.hpp"
 
-using namespace Velvet;
+using namespace VRThreads;
 
 __device__ __constant__ HashParams d_params;
 HashParams h_params;
@@ -156,7 +158,7 @@ void Sort(
 		d_keys_in, d_keys_in, d_values_in, d_values_in, num_items, 0, maxBit);
 }
 
-void Velvet::HashObjects(
+void VRThreads::HashObjects(
 	uint* particleHash,
 	uint* particleIndex,
 	uint* cellStart,

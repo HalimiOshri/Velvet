@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace Velvet
+namespace VRThreads
 {
 	__device__ __constant__ VtSimParams d_params;
 	VtSimParams h_params;
@@ -268,7 +268,7 @@ namespace Velvet
 		}
 		return friction;
 	}
-
+	// TODO OH: this is the place we should integrate a generic mesh collider
 	__global__ void CollideSDF_Kernel(
 		glm::vec3* predicted,
 		CONST(SDFCollider*) colliders, 
@@ -283,6 +283,7 @@ namespace Velvet
 		for (int i = 0; i < numColliders; i++)
 		{
 			auto collider = colliders[i];
+			// TODO OH: this is the place the collider SDF is called
 			glm::vec3 correction = collider.ComputeSDF(pred, d_params.collisionMargin);
 			pred += correction;
 
@@ -296,6 +297,7 @@ namespace Velvet
 		predicted[id] = pred;
 	}
 
+	// TODO OH: here the cuda kernels for the collision with SDF and particles
 	void CollideSDF(
 		glm::vec3* predicted,
 		CONST(SDFCollider*) colliders,

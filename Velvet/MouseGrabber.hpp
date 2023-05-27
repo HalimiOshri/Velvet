@@ -12,7 +12,7 @@
 #include "VtEngine.hpp"
 #include "Camera.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	struct Ray
 	{

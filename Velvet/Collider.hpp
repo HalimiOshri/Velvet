@@ -5,7 +5,7 @@
 #include "Global.hpp"
 #include "Timer.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class Collider : public Component
 	{
@@ -42,6 +42,8 @@ namespace Velvet
 
 		virtual glm::vec3 ComputeSDF(glm::vec3 position)
 		{
+			// TODO OH: compute SDF for general mesh collider
+
 			if (type == ColliderType::Plane)
 			{
 				return ComputePlaneSDF(position);

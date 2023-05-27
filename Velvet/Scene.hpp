@@ -18,7 +18,7 @@
 
 //#define SOLVER_CPU
 
-namespace Velvet
+namespace VRThreads
 {
 	class Scene
 	{
@@ -127,7 +127,8 @@ namespace Velvet
 					});
 			}
 		}
-	
+		
+		// TODO OH: GenerateClothMeshFromObj
 		shared_ptr<Mesh> GenerateClothMesh(int resolution)
 		{
 			vector<glm::vec3> vertices;
@@ -252,6 +253,7 @@ namespace Velvet
 		{
 			auto cloth = game->CreateActor("Cloth Generated");
 
+			// TODO OH: Address non-homogeneous material
 			auto material = Resource::LoadMaterial("_Default");
 			material->Use();
 			material->doubleSided = true;
@@ -301,9 +303,13 @@ namespace Velvet
 
 			auto material = Resource::LoadMaterial("_Default");
 
+			// TODO OH: Here the geometry is defined from .obj file
 			auto mesh = Resource::LoadMesh("sphere.obj");
 			auto renderer = make_shared<MeshRenderer>(mesh, material, true);
 			renderer->SetMaterialProperty(materialProperty);
+
+			// TODO OH: Here the collider is defined for a predefined type "Sphere". 
+			// SpawnMesh should use a new type Mesh / DynamicMesh to be implemented
 			auto collider = make_shared<Collider>(ColliderType::Sphere);
 			sphere->AddComponents({ renderer, collider });
 			return sphere;

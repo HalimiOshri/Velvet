@@ -20,7 +20,7 @@ struct fmt::formatter<glm::vec2> : fmt::formatter<std::string> {
 	}
 };
 
-namespace Velvet
+namespace VRThreads
 {
 	namespace Helper
 	{

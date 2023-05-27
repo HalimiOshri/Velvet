@@ -4,7 +4,7 @@
 #include "Resource.hpp"
 #include "VtClothObjectCPU.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	// Render particles using instanced rendering
 	class ParticleInstancedRenderer : public MeshRenderer

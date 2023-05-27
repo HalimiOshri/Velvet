@@ -6,7 +6,7 @@
 
 #include "Helper.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class Actor;
 

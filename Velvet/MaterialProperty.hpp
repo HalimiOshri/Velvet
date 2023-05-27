@@ -4,7 +4,7 @@
 
 #include "Material.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	using namespace std;
 

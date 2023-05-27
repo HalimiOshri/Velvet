@@ -39,7 +39,7 @@
 #define CUDA_CALL_V(func, ...)
 #endif
 
-namespace Velvet
+namespace VRThreads
 {
 	typedef unsigned int uint;
 

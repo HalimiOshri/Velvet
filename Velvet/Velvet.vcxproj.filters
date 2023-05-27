@@ -40,6 +40,7 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Graphics\Source</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="External">
@@ -183,6 +184,7 @@
     <ClInclude Include="VtClothObjectCPU.hpp">
       <Filter>Physics\ClothSolverCPU</Filter>
     </ClInclude>
+    <ClInclude Include="Animation.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shader\_Default.frag">

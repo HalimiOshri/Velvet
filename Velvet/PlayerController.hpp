@@ -11,7 +11,7 @@
 #include "GUI.hpp"
 #include "Camera.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class PlayerController : public Component
 	{

@@ -7,7 +7,7 @@
 
 #define SET_COMPONENT_NAME name = __func__
 
-namespace Velvet
+namespace VRThreads
 {
 	using namespace std;
 

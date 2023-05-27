@@ -1,6 +1,6 @@
 #include "Actor.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	Actor::Actor() {}
 

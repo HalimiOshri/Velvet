@@ -15,7 +15,7 @@
 #include "Mesh.hpp"
 #include "Material.hpp"
 
-namespace Velvet
+namespace VRThreads
 {
 	class Resource
 	{
@@ -74,6 +74,11 @@ namespace Velvet
             return textureID;
 		}
 
+		static vector<shared_ptr<Mesh>> LoadAnimation(const string& pathFormat, int startFrame, int endFrame) 
+		{
+			vector<shared_ptr<Mesh>> vMeshes;
+			return vMeshes;
+		}
 		static shared_ptr<Mesh> LoadMesh(const string& path)
 		{
 			if (meshCache.count(path) > 0)

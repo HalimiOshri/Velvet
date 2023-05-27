@@ -13,7 +13,7 @@
 #include "VtEngine.hpp"
 #include "Resource.hpp"
 
-using namespace Velvet;
+using namespace VRThreads;
 
 GameInstance::GameInstance(GLFWwindow* window, shared_ptr<GUI> gui)
 {
@@ -69,14 +69,14 @@ unsigned int GameInstance::depthFrameBuffer()
 	return m_renderPipeline->depthTex;
 }
 
-glm::ivec2 Velvet::GameInstance::windowSize()
+glm::ivec2 VRThreads::GameInstance::windowSize()
 {
 	glm::ivec2 result;
 	glfwGetWindowSize(m_window, &result.x, &result.y);
 	return result;
 }
 
-bool Velvet::GameInstance::windowMinimized()
+bool VRThreads::GameInstance::windowMinimized()
 {
 	auto size = windowSize();
 	return (size.x < 1 || size.y < 1);
