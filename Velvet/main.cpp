@@ -11,7 +11,11 @@ using namespace VRThreads;
 class SceneClothAvatar : public Scene
 {
 public:
-	SceneClothAvatar() { name = "Cloth / Avatar";}
+	SceneClothAvatar() { 
+		name = "Cloth / Avatar"; 
+		_LoadFiles();
+	}
+
 	void PopulateActors(GameInstance* game)  override
 	{
 		Scene::SpawnCameraAndLight(game);
@@ -27,15 +31,19 @@ public:
 
 		auto avatar = game->CreateActor("Avatar");
 		{
-			Animation meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50);
+			// Animation meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50);
 			// std::cout << "Finished loading animation" << std::endl;
 
-			shared_ptr<MeshRenderer> renderer(new MeshRenderer(meshAnimation.getStart(), material, true));
+			shared_ptr<MeshRenderer> renderer(new MeshRenderer(_meshAnimation.getStart(), material, true));
 			avatar->AddComponent(renderer);
 			// avatar->transform->position = glm::vec3(0.6f, 2.0f, 0.0);
 			avatar->transform->scale = glm::vec3(0.01f);
 		}
 	};
+private:
+	Animation _meshAnimation;
+
+	void _LoadFiles(){ _meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50); }
 };
 
 class ScenePremitiveRendering : public Scene
