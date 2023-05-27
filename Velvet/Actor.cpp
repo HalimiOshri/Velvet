@@ -50,6 +50,14 @@ namespace VRThreads
 			c->Update();
 		}
 	}
+
+	void Actor::Progress(float time) // OH: to allow time dependent update
+	{
+		for (const auto& c : components)
+		{
+			c->Progress(time);
+		}
+	}
 	
 	void Actor::FixedUpdate()
 	{

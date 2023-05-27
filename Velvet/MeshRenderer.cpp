@@ -25,6 +25,11 @@ namespace VRThreads
 		m_materialProperty = materialProperty;
 	}
 
+	void MeshRenderer::SetMesh(const shared_ptr<Mesh> mesh)
+	{
+		m_mesh = mesh;
+	}
+
 	// Only support spot light for now
 	void MeshRenderer::SetupLighting(shared_ptr<Material> m_material)
 	{

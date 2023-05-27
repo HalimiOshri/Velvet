@@ -31,19 +31,23 @@ public:
 
 		auto avatar = game->CreateActor("Avatar");
 		{
-			// Animation meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50);
-			// std::cout << "Finished loading animation" << std::endl;
-
-			shared_ptr<MeshRenderer> renderer(new MeshRenderer(_meshAnimation.getStart(), material, true));
+			shared_ptr<MeshRenderer> renderer(new MeshRenderer(_meshAnimation->getMesh(), material, true));
 			avatar->AddComponent(renderer);
+			avatar->AddComponent(_meshAnimation);
+
 			// avatar->transform->position = glm::vec3(0.6f, 2.0f, 0.0);
 			avatar->transform->scale = glm::vec3(0.01f);
+
+			game->animationUpdate.Register([avatar, game]() {
+				float time = Timer::fixedDeltaTime() * Timer::physicsFrameCount();
+				avatar->Progress(time);
+				});
 		}
 	};
 private:
-	Animation _meshAnimation;
+	shared_ptr<Animation> _meshAnimation;
 
-	void _LoadFiles(){ _meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50); }
+	void _LoadFiles(){ _meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50, 10.0); }
 };
 
 class ScenePremitiveRendering : public Scene

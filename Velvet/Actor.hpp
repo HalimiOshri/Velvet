@@ -27,6 +27,8 @@ namespace VRThreads
 
 		void Update();
 
+		void Actor::Progress(float time); // OH: to allow time dependent update
+
 		void FixedUpdate();
 
 		void OnDestroy();

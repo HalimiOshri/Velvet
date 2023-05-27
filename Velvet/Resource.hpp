@@ -75,7 +75,7 @@ namespace VRThreads
             return textureID;
 		}
 
-		static Animation LoadAnimation(const string& pathFormat, int startFrame, int endFrame)
+		static shared_ptr<Animation> LoadAnimation(const string& pathFormat, int startFrame, int endFrame, float timeInterval)
 		{
 			vector<shared_ptr<Mesh>> vMeshes;
 			string path;
@@ -86,7 +86,7 @@ namespace VRThreads
 				currMesh = LoadMesh(path);
 				vMeshes.push_back(currMesh);
 			}
-			return Animation(vMeshes);
+			return shared_ptr<Animation>(new Animation(vMeshes, timeInterval));
 		}
 
 		static shared_ptr<Mesh> LoadMesh(const string& path)

@@ -23,6 +23,8 @@ namespace VRThreads
 
 		void SetMaterialProperty(const MaterialProperty& materialProperty);
 
+		void MeshRenderer::SetMesh(const shared_ptr<Mesh> mesh);
+
 		virtual void Render(glm::mat4 lightMatrix);
 
 		virtual void RenderShadow(glm::mat4 lightMatrix);

@@ -98,6 +98,11 @@ namespace VRThreads
 			return m_positions;
 		}
 
+		const vector<glm::vec3>& normals() const
+		{
+			return m_normals;
+		}
+
 		const vector<unsigned int>& indices() const
 		{
 			return m_indices;
