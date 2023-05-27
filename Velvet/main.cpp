@@ -47,7 +47,7 @@ public:
 private:
 	shared_ptr<Animation> _meshAnimation;
 
-	void _LoadFiles(){ _meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50, 10.0); }
+	void _LoadFiles(){ _meshAnimation = Resource::LoadAnimation("C:/Users/Oshri/Data/Legend/simOutput/static/abody{:06d}.obj", 1, 50, 2.0); }
 };
 
 class ScenePremitiveRendering : public Scene

@@ -20,7 +20,7 @@ namespace VRThreads
 
 		virtual void Update() { }
 
-		virtual void Progress(float time) {} // OH: to allow time dependent update
+		virtual void Progress(float time) {} // OH: to allow time incremental update
 
 		virtual void FixedUpdate() {}
 
