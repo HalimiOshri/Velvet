@@ -26,12 +26,21 @@ public:
 			material->Use();
 
 			material->SetTexture("material.diffuse", Resource::LoadTexture("wood.png"));
-			material->SetBool("material.useTexture", true);
+			material->SetBool("material.useTexture", true);			
 		}
+
+		MaterialProperty materialProperty;
+		auto texture = Resource::LoadTexture("wood.png");
+		materialProperty.preRendering = [texture](Material* mat) {
+			mat->SetTexture("material.diffuse", texture);
+			mat->SetBool("material.useTexture", true);
+		};
+
+		shared_ptr<MeshRenderer> renderer(new MeshRenderer(_meshAnimation->getMesh(), material, true));
+		renderer->SetMaterialProperty(materialProperty);
 
 		auto avatar = game->CreateActor("Avatar");
 		{
-			shared_ptr<MeshRenderer> renderer(new MeshRenderer(_meshAnimation->getMesh(), material, true));
 			avatar->AddComponent(renderer);
 			avatar->AddComponent(_meshAnimation);
 
@@ -42,6 +51,28 @@ public:
 				float time = Timer::fixedDeltaTime() * Timer::physicsFrameCount();
 				avatar->Progress(time);
 				});
+		}
+
+		ModifyParameter(&Global::simParams.friction, 0.6f);
+		ModifyParameter(&Global::simParams.numSubsteps, 5);
+		ModifyParameter(&Global::simParams.numIterations, 5);
+
+		auto solverActor = game->CreateActor("ClothSolver");
+		auto solver = make_shared<VtClothSolverGPU>();
+		solverActor->AddComponent(solver);
+
+		int clothResolution = 64;
+		{
+			auto cloth = SpawnCloth(game, clothResolution, 1, solver);
+			cloth->Initialize(glm::vec3(0.0f, 1.5f, 1.0f), glm::vec3(1.0), glm::vec3(90, 0, 0));
+		}
+		{
+			auto cloth = SpawnCloth(game, clothResolution, 2, solver);
+			cloth->Initialize(glm::vec3(0.0f, 1.8f, 1.0f), glm::vec3(1.0), glm::vec3(90, 0, 0));
+		}
+		{
+			auto cloth = SpawnCloth(game, clothResolution, 3, solver);
+			cloth->Initialize(glm::vec3(0.0f, 2.1f, 1.0f), glm::vec3(1.0), glm::vec3(90, 0, 0));
 		}
 	};
 private:

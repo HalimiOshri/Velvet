@@ -253,7 +253,8 @@ namespace VRThreads
 		{
 			auto cloth = game->CreateActor("Cloth Generated");
 
-			// TODO OH: Address non-homogeneous material
+			// TODO OH: Address non-homogeneous cloth springs
+
 			auto material = Resource::LoadMaterial("_Default");
 			material->Use();
 			material->doubleSided = true;
