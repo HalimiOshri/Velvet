@@ -77,8 +77,17 @@ namespace VRThreads
 		static vector<shared_ptr<Mesh>> LoadAnimation(const string& pathFormat, int startFrame, int endFrame) 
 		{
 			vector<shared_ptr<Mesh>> vMeshes;
+			string path;
+			shared_ptr<Mesh> currMesh;
+
+			for (int i = startFrame; i <= endFrame; i++) {
+				path = fmt::format(pathFormat, i);
+				currMesh = LoadMesh(path);
+				vMeshes.push_back(currMesh);
+			}
 			return vMeshes;
 		}
+
 		static shared_ptr<Mesh> LoadMesh(const string& path)
 		{
 			if (meshCache.count(path) > 0)

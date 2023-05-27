@@ -8,6 +8,15 @@
 
 using namespace VRThreads;
 
+class SceneClothAvatar : public Scene
+{
+public:
+	SceneClothAvatar() { name = "Cloth / Avatar";}
+	void PopulateActors(GameInstance* game)  override
+	{
+	};
+};
+
 class ScenePremitiveRendering : public Scene
 {
 public:
@@ -344,6 +353,7 @@ int main()
 	//=====================================
 	
 	vector<shared_ptr<Scene>> scenes = {
+		make_shared<SceneClothAvatar>(),
 		make_shared<SceneClothAttach>(),
 		make_shared<SceneClothCollision>(),
 		make_shared<SceneClothSelfCollision>(),
